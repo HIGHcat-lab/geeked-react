@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+/* Set html and body to fill the viewport and center everything */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  background-color: #121212;
+  color: #e5e7eb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main container - centers all content */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0 20px;
+}
+
+/* Content box to constrain maximum width and center text */
+.content-box {
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Row for logos */
+.image-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.pop-image {
+  width: 100px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Title styling */
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+/* Search row: input field and upload button */
+.search-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.search-row input {
+  width: 300px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  background: #1f1f1f;
+  color: #e5e7eb;
+}
+
+.search-row button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #0a4a2d;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Upload panel (revealed when upload is requested) */
+.upload-panel {
+  background: #1f1f1f;
+  border: 1px solid #333;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.upload-panel input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  background: #2a2a2a;
+  color: #e5e7eb;
+}
+
+.upload-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.upload-buttons button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.upload-buttons .cancel {
+  background-color: #4b5563;
+  color: white;
+}
+
+.upload-buttons button:first-child {
+  background-color: #10b981;
+  color: white;
+}
+
+.error {
+  color: #f87171;
+}
+
+.success {
+  color: #34d399;
+}
+
+/* The preview list, each preview-card represents a saved spreadsheet */
+.preview-list {
+  margin-top: 30px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+  width: 100%;
+}
+
+.preview-card {
+  background-color: #1e1e1e;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.preview-card:hover {
+  transform: scale(1.01);
+  background-color: #222;
+}
+
+.preview-card h3 {
+  margin-bottom: 10px;
+}
+
+/* Scale the iframe (preview) down slightly */
+.preview-frame {
+  width: 100%;
+  height: 160px;
+  transform: scale(0.9);
+  transform-origin: top;
+  pointer-events: none;
+}
+
+.animated-title span {
+  display: inline-block;
+  color: #e5e7eb;
+  animation: glowGreen 2s infinite;
+  opacity: 0.7;
+}
+
+@keyframes glowGreen {
+  0%   { color: #e5e7eb; opacity: 0.7; }
+  10%  { color: #10b981; opacity: 1; }
+  100% { color: #e5e7eb; opacity: 0.7; }
+}
